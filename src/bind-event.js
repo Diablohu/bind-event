@@ -1,21 +1,34 @@
-export default (elm, evt, listener, options) => {
-    if (!elm || !evt || !listener) return;
+(function (name, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory()
+    } else {
+        window[name] = factory();
+    }
+})('bind-event', function () {
 
-    const evtUpperCase = evt.substr(0, 1).toUpperCase() + evt.substr(1);
-    const events = [
-        evt,
-        'o' + evtUpperCase,
-        'moz' + evtUpperCase,
-        'webkit' + evtUpperCase,
-        'ms' + evtUpperCase
-    ];
+    "use strict";
 
-    let theEvt = false;
+    return (elm, evt, listener, options) => {
+        if (!elm || !evt || !listener) return;
 
-    events.some(e => {
-        if ('on' + e in window) theEvt = e;
-        return theEvt;
-    });
+        const evtUpperCase = evt.substr(0, 1).toUpperCase() + evt.substr(1);
+        const events = [
+            evt,
+            'o' + evtUpperCase,
+            'moz' + evtUpperCase,
+            'webkit' + evtUpperCase,
+            'ms' + evtUpperCase
+        ];
 
-    return elm.addEventListener(theEvt || evt, listener, options);
-};
+        let theEvt = false;
+
+        events.some(e => {
+            if ('on' + e in window) theEvt = e;
+            return theEvt;
+        });
+
+        return elm.addEventListener(theEvt || evt, listener, options);
+    };
+})
