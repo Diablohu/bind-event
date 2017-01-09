@@ -1,0 +1,32 @@
+{
+  "name": "bind-event",
+  "version": "1.0.0",
+  "description": "Bind event handler for all browsers by adding prefix automaticlly",
+  "main": "dist/bind-event.js",
+  "scripts": {
+    "dist": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Diablohu/bind-event"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Diablohu/bind-event"
+    }
+  ],
+  "author": {
+    "name": "Diablohu",
+    "email": "diablohudream@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.4",
+    
+    "webpack": "^2.2.0-rc.3"
+  }
+}
