@@ -10,11 +10,11 @@
 
     "use strict";
 
-    return (elm, evt, listener, options) => {
+    return function (elm, evt, listener, options) {
         if (!elm || !evt || !listener) return;
 
-        const evtUpperCase = evt.substr(0, 1).toUpperCase() + evt.substr(1);
-        const events = [
+        var evtUpperCase = evt.substr(0, 1).toUpperCase() + evt.substr(1);
+        var events = [
             evt,
             'o' + evtUpperCase,
             'moz' + evtUpperCase,
@@ -22,9 +22,9 @@
             'ms' + evtUpperCase
         ];
 
-        let theEvt = false;
+        var theEvt = false;
 
-        events.some(e => {
+        events.some(function (e) {
             if ('on' + e in window) theEvt = e;
             return theEvt;
         });

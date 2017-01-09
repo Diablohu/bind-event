@@ -1,10 +1,9 @@
 {
   "name": "bind-event",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Bind event handler for all browsers by adding prefix automaticlly",
-  "main": "dist/bind-event.js",
+  "main": "src/bind-event.js",
   "scripts": {
-    "dist": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
