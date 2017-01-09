@@ -1,6 +1,6 @@
 {
   "name": "bind-event",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bind event handler for all browsers by adding prefix automaticlly",
   "main": "dist/bind-event.js",
   "scripts": {

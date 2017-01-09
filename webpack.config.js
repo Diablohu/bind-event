@@ -4,7 +4,11 @@ const path = require('path');
 const srcPath = path.resolve(process.cwd(), 'src');
 
 module.exports = {
-    entry: path.join(srcPath, 'bind-event.js'),
+    entry: {
+        'bind-event': [
+            path.join(srcPath, 'bind-event.js')
+        ]
+    },
     output: {
         path: path.resolve(process.cwd(), 'dist/'),
         filename: '[name].js'
