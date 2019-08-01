@@ -1,7 +1,7 @@
 declare module 'bindEvent';
 
 function bindEvent(
-    elm: HTMLElement,
+    elm: Element,
     type: string,
     listener: (this: HTMLDocument, ev: DocumentEventMap[K]) => any,
     options?: boolean | AddEventListenerOptions
